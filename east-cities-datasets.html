@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EAST-Cities dataset inventory - 30/10/2019</title>
+  
+  <style>
+	#myInput {
+	  background-image: url('/search-var-flat/search-var-flat/64x64.png'); /* Add a search icon to input */
+	  background-position: 10px 12px; /* Position the search icon */
+	  background-repeat: no-repeat; /* Do not repeat the icon image */
+	  width: 100%; /* Full-width */
+	  font-size: 16px; /* Increase font-size */
+	  padding: 12px 20px 12px 40px; /* Add some padding */
+	  border: 1px solid #ddd; /* Add a grey border */
+	  margin-bottom: 12px; /* Add some space below the input */
+	}
+
+	#myTable {
+	  border-collapse: collapse; /* Collapse borders */
+	  width: 100%; /* Full-width */
+	  border: 1px solid #ddd; /* Add a grey border */
+	  font-size: 18px; /* Increase font-size */
+	}
+
+	#myTable th, #myTable td {
+	  text-align: left; /* Left-align text */
+	  padding: 12px; /* Add padding */
+	}
+
+	#myTable tr {
+	  /* Add a bottom border to all table rows */
+	  border-bottom: 1px solid #ddd;
+	}
+
+	#myTable tr.header, #myTable tr:hover {
+	  /* Add a grey background color to the table header and on hover */
+	  background-color: #f1f1f1;
+	}
+	
+	html * {
+	  font-family: "calibri"
+	}
+  </style>
+
+</head>
+
+<body>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue, display;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    display = "none";
+    tds = tr[i].getElementsByTagName("td");
+    for (j = 0; j < tds.length; j++) {
+      td = tds[j];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          display = "";
+        } 
+      }
+    } 
+    tr[i].style.display = display;
+    display = "none";
+  }
+}
+</script>
+
+<h1>Dataset Inventory - Qingdao and China</h1>
+<p>Click on series/project title or individual datasets for a description of the content / links to the datasets.</p>
+<p>Use the search bar to filter datasets (terms are searched in all of the given fields).</p> 
+<p>Please note: the tags are meant to give a coarse idea what a dataset is about, they are not complete or following a consistent tagging scheme! (feel free to suggest terms you'd find more useful)</p>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search table...">
+<br />
+<br />
+<br />
+<table class="searchable sortable" id="myTable">
+ <thead>
+   <tr>
+     <th>Series/Project Title</th>
+     <th>Datasets</th>
+     <th>Type</th>
+     <th>Tags</th>
+  </tr>
+ </thead>
+ <tbody>
+ 	<tr>
+		<td><a href="https://cloudstorage.tu-braunschweig.de/open/MlhQSjNGTXhnb2hwNDhhMmVWQUtm/B_SUBPROJECTS/SP-07_DATA/Datasets/Qingdao_Climate_meta.pdf">Qingdao Climate Data</a></td>
+		<td><a href="https://cloudstorage.tu-braunschweig.de/open/MlhQSjNGTXhnb2hwNDhhMmVWQUtm/B_SUBPROJECTS/SP-07_DATA/Datasets/Qingdao_Climate%282011.01.01-2019.08.13%29.en.xlsx">Qingdao Climate Data (dataset created by Xiaofei)</a></td>
+		<td>statistics</td>
+		<td>climate</td>
+    </tr>
+	<tr>
+		<td><a href="https://cloudstorage.tu-braunschweig.de/open/MlhQSjNGTXhnb2hwNDhhMmVWQUtm/B_SUBPROJECTS/SP-07_DATA/Datasets/Qingdao_AirQuality_meta.pdf">Qingdao Air Quality Data</a></td>
+		<td><a href="https://cloudstorage.tu-braunschweig.de/open/MlhQSjNGTXhnb2hwNDhhMmVWQUtm/B_SUBPROJECTS/SP-07_DATA/Datasets/Qingdao_AirQuality%282013.12.01-2019.08.11%29.en.xlsx">Qingdao Air Quality Data (dataset created by Xiaofei)</a></td>
+		<td>statistics</td>
+		<td>air quality, pollution</td>
+    </tr>
+	<tr>
+		<td>Qingdao Statistical Yearbook of Urban and Rural Construction 2017</td>
+		<td><a href="https://cloudstorage.tu-braunschweig.de/open/MlhQSjNGTXhnb2hwNDhhMmVWQUtm/B_SUBPROJECTS/SP-07_DATA/Datasets/2017%20Statistical%20yearbook%20of%20urban%20and%20rural%20construction%20%28excel%20version%29%20.xls">Statistical Yearbook of Urban and Rural Construction (dataset created by Panyu)</a></td>
+		<td>statistics</td>
+		<td>construction, service facilities, water, mobility, road surface area, road networks, recreation, green space, population, garbage treatment, land usage, finances, investment, production, energy, gas, heating, rail transit, landscaping, sanitation </td>
+    </tr>
+	<tr>
+		<td><a href="http://worldmap.harvard.edu/data/geonode:ch_vegetation">Vegetation map of China (2000)</a></td>
+		<td><a href="http://worldmap.harvard.edu/data/geonode:ch_vegetation">Vegetation map of China (2000) (see Ryan's data matrix)</a></td>
+		<td>spatial database/map</td>
+		<td>environmental resources, conservation, vegetation, geospatial information</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.beijingcitylab.com/data-released/data1-20/">Population density of China at the town level</a></td>
+		<td><a href="https://www.beijingcitylab.com/data-released/data1-20/">Population density of China at the town level  (see Ryan's data matrix)</a></td>
+		<td>statistics</td>
+		<td>population</td>
+	</tr>
+	<tr>
+		<td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/8HHUDG">China Temporal Datasets</a></td>
+		<td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/8HHUDG">China Temporal Datasets (see Ryan's data matrix)</a></td>
+		<td>statistics</td>
+		<td>demographic spatial data, building construction, utilities</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.diva-gis.org/Data">DIVA-GIS Spatial Data</a></td>
+		<td><a href="https://www.diva-gis.org/Data">DIVA-GIS Spatial Data (see Ryan's data matrix)</a></td>
+		<td>spatial database/map</td>
+		<td>roads, railways, administrative borders, population grid, geospatial information</td>
+	</tr>
+	<tr>
+		<td><a href="http://download.geofabrik.de/">OpenStreetMap Data Extracts</a></td>
+		<td><a href="http://download.geofabrik.de/">OpenStreetMap Data Extracts (see Ryan's data matrix)</a></td>
+		<td>spatial database/map</td>
+		<td>roads, buildings, urban infrastructure, geospatial information</td>
+	</tr>
+	<tr>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://de.statista.com/statistik/daten/studie/515129/umfrage/containerumschlag-im-hafen-von-qingdao/">Containerumschlag im Hafen von Qingdao bis 2018</a>
+		</td>
+	 	<td>
+			<a href="https://de.statista.com/statistik/daten/studie/515129/umfrage/containerumschlag-im-hafen-von-qingdao/">Containerumschlag im Hafen von Qingdao bis 2018</a>
+		</td>
+		<td>statistics</td>
+		<td>economy, trade, port</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://www.statista.com/statistics/278453/trade-volume-in-chinese-coastal-ports/">Volume of traded freight in China's main coastal ports 2017</a>
+		</td>
+	 	<td>
+			<a href="https://www.statista.com/statistics/278453/trade-volume-in-chinese-coastal-ports/">Volume of traded freight in China's main coastal ports 2017</a>
+		</td>
+		<td>statistics</td>
+		<td>economy, trade, port</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://cmr.earthdata.nasa.gov/search/concepts/C1214614028-SCIOPS">Coal Geology, Land Use, and Human Health in the Peoples Republic of China: Power station locations</a>
+		</td>
+	 	<td>
+			<a href="https://cmr.earthdata.nasa.gov/search/concepts/C1214614028-SCIOPS">Coal Geology, Land Use, and Human Health in the Peoples Republic of China: Power station locations</a>
+		</td>
+		<td>spatial database/map</td>
+		<td>energy, economy, geospatial information</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.sciencebase.gov/catalog/item/4f4e477ae4b07f02db47f732">Coal Geology, Land Use, and Human Health in the Peoples Republic of China: Power line locations</a></td>
+		<td><a href="https://www.sciencebase.gov/catalog/item/4f4e477ae4b07f02db47f732">Coal Geology, Land Use, and Human Health in the Peoples Republic of China: Power line locations</a></td>
+		<td>spatial database/map, statistics</td>
+		<td>energy, economy, geospatial information, power line networks, power handling capacity</td><!--https://cmr.earthdata.nasa.gov/search/concepts/C1214614001-SCIOPS-->
+	</tr>
+	<tr>
+		<td><a href="https://www.enterprisesurveys.org/">World Bank Enterprise Surveys</a></td>
+		<td><a href="https://microdata.worldbank.org/index.php/catalog/1559">Enterprise Survey 2012</a></td>
+		<td>survey data</td>
+		<td>economy, manufacturing, services, business environment indicators</td>
+	</tr>
+<tr>
+		<td><a href="https://figshare.com/articles/_Spatiotemporal_Features_of_the_Three_Dimensional_Architectural_Landscape_in_Qingdao_China_/1539942/1">Spatiotemporal Features of the Three-Dimensional Architectural Landscape in Qingdao, China</a></td>
+		<td><a href="https://figshare.com/articles/_Spatiotemporal_Features_of_the_Three_Dimensional_Architectural_Landscape_in_Qingdao_China_/1539942/1">Spatiotemporal Features of the Three-Dimensional Architectural Landscape in Qingdao, China</a></td>
+		<td>statistics</td>
+		<td>architecture, landuse, construction, spatiotemporal information</td>
+	</tr>
+<tr>
+		<td><a href="https://figshare.com/articles/The_population_of_Qingdao_by_sex_and_age_in_2005_2010_and_2015_/7114295/1">The population of Qingdao by sex and age in 2005, 2010 and 2015.</a></td>
+		<td><a href="https://figshare.com/articles/The_population_of_Qingdao_by_sex_and_age_in_2005_2010_and_2015_/7114295/1">The population of Qingdao by sex and age in 2005, 2010 and 2015.</a></td>
+		<td>statistics</td>
+		<td>population</td>
+	</tr>
+<tr>
+		<td><a href="https://cdn.statista.com/statistics/738394/china-number-of-coffee-shops-in-qingdao/">Number of cafes in Qingdao, China 2016</a></td>
+		<td><a href="https://cdn.statista.com/statistics/738394/china-number-of-coffee-shops-in-qingdao/">Number of cafes in Qingdao, China 2016</a></td>
+		<td>statistics</td>
+		<td>economy, business</td>
+	</tr>
+	<tr>
+		<td><a href="https://search.datacite.org/works/10.5676/dwd/qing_v1">Homogenized surface air temperature series of Qingdao in China for the period 1899 to 2014</a></td>
+		<td><a href="https://search.datacite.org/works/10.5676/dwd/qing_v1">Homogenized surface air temperature series of Qingdao in China for the period 1899 to 2014</a></td>
+		<td>statistics</td>
+		<td>climate</td>
+	</tr>
+	<tr>
+		<td><a href="https://www.ceicdata.com/en">CEIC Macro and Micro Economic Data for Qingdao</a></td>
+		<td><a href="https://www.ceicdata.com/en/china/gross-industrial-output-prefecture-level-city/cn-gross-industrial-output-shandong-qingdao">CEIC Macro and Micro Economic Data for Qingdao, e.g. Gross Industrial Output: Shandong: Qingdao</a></td>
+		<td>statistics</td>
+		<td>economy, trade</td>
+	</tr>
+<!--
+<tr>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+-->
+<!--
+https://www.ceicdata.com/en/china/airport-freight-throughput-monthly/airport-freight-throughput-qingdao
+
+https://www.ceicdata.com/en/china/shandong-qingdao-property
+
+https://www.ceicdata.com/en/china/property-price-residential-prefecture-level-city/cn-property-price-residential-shandong-qingdao
+
+https://www.ceicdata.com/en/china/shandong-qingdao-property-daily-transaction/qingdao-floor-space-for-sell-residential
+
+https://www.ceicdata.com/en/china/shandong-qingdao-property-daily-transaction
+
+https://www.ceicdata.com/en/china/consumption-expenditure-per-capita-prefecture-level-city-rural/consumption-expenditure-per-capita-rural-shandong-qingdao
+
+https://www.ceicdata.com/en/china/disposable-income-per-capita-prefecture-level-city-urban/disposable-income-per-capita-urban-shandong-qingdao
+
+https://www.ceicdata.com/en/china/population-non-agricultural-prefecture-level-city/population-non-agricultural-shandong-qingdao
+
+https://www.ceicdata.com/en/china/population-prefecture-level-city/population-shandong-qingdao-household-registration
+
+https://www.ceicdata.com/en/china/import-by-location-of-consumer/cn-import-location-of-consumer-shandong-qingdao-hntidz
+
+https://www.ceicdata.com/en/china/government-expenditure-county-level-region/government-expenditure-shandong-qingdao-jiaonan
+
+https://www.ceicdata.com/en/china/gross-industrial-output-prefecture-level-city/cn-gross-industrial-output-shandong-qingdao
+
+https://www.ceicdata.com/en/china/government-expenditure-county-level-region/government-expenditure-shandong-qingdao-jimo
+
+https://www.ceicdata.com/en/china/consumption-expenditure-per-capita-city-clothing/consumption-exp-per-capita-ytd-clothing-qingdao
+
+-->
+
+   <tr>
+		<td><a href="https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6046#!/details">Chinese Retail Sector Employee Interviews</a></td>
+		<td><a href="https://beta.ukdataservice.ac.uk/datacatalogue/doi/?id=6046#!#1">Chinese Retail Sector Employee Interviews, 2003-2004</a></td>
+		<td>survey data</td>
+		<td>labour, employment, consumer behaviour, business/industrial management and organisation, human resources, working conditions<!--
+    Labour relations/conflict
+    Labour and employment
+    Vocational education and training
+    Consumption and consumer behaviour
+    Business/industrial management and organisation
+
+    BUSINESS MANAGEMENT
+    CHINA
+    CONSUMERS
+    COUNTER SERVICES
+    CUSTOMER SERVICE
+    CUSTOMERS
+    EMPLOYEES
+    EMPLOYMENT
+    EMPLOYMENT HISTORY
+    EXPATRIATES
+    FOREIGN ENTERPRISES
+    HUMAN RESOURCES
+    JOB CHARACTERISTICS
+    MANAGEMENT OPERATIONS
+    OCCUPATIONAL TRAINING
+    RETAIL OUTLETS
+    RETAIL SERVICES
+    RETAIL TRADE
+    SALES PERSONNEL
+    TRANSNATIONAL ENTERPRISES
+    WORKING CONDITIONS
+-->
+</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/series/243">Chinese Household Income Project</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/9836/versions/V2">Chinese Household Income Project, 1988 (ICPSR 9836)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/3012/versions/V2">Chinese Household Income Project, 1995 (ICPSR 3012)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/9836/version/2">Chinese Household Income Project, 1988 (ICPSR 9836)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/3012/version/2">Chinese Household Income Project, 1995 (ICPSR 3012)</a>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/21741/version/1">Chinese Household Income Project, 2002 (ICPSR 21741)</a>,
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/3012">Chinese Household Income Project, 1995 (ICPSR 3012)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/21741">Chinese Household Income Project, 2002 (ICPSR 21741)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/3012">Chinese Household Income Project, 1995 (ICPSR 3012)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/DSDR/studies/9836">Chinese Household Income Project, 1988 (ICPSR 9836)</a>
+		</td>
+		<td>survey data</td>
+		<td>household income, finances, economy</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/series/486">East Asian Social Survey (EASS), Cross-National Survey Data Sets</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34607">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Culture and Globalization in East Asia, 2008 (ICPSR 34607)</a>,
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34607/version/2">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Culture and Globalization in East Asia, 2008 (ICPSR 34607)</a>
+		,
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34608">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Health and Society in East Asia, 2010 (ICPSR 34608)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34608/versions/V2">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Health and Society in East Asia, 2010 (ICPSR 34608)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34606/versions/V3">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Families in East Asia, 2006 (ICPSR 34606)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/36277/version/1">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Network Social Capital in East Asia, 2012 (ICPSR 36277)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34608/version/2">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Health and Society in East Asia, 2010 (ICPSR 34608)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34606/versions/V3">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Families in East Asia, 2006 (ICPSR 34606)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34608/version/2">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Health and Society in East Asia, 2010 (ICPSR 34608)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/36277">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Network Social Capital in East Asia, 2012 (ICPSR 36277)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34606/version/3">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Families in East Asia, 2006 (ICPSR 34606)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34607/versions/V2">East Asian Social Survey (EASS), Cross-National Survey Data Sets: Culture and Globalization in East Asia, 2008 (ICPSR 34607)</a>
+		</td>
+		<td>survey data</td>
+		<td>culture, social, family, health, social capital, attitudes</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/series/123">International Financial Statistics</a></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7629">International Financial Statistics (ICPSR 7629)</a>,
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7629/version/2">International Financial Statistics (ICPSR 7629)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7629/versions/V2">International Financial Statistics (ICPSR 7629)</a>
+		</td>
+		<td>statistics</td>
+		<td>finances, economy, balance of payments, trade, reserves, monetary expansion and contraction, government surpluses and deficits, production, prices, interest rates</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/20420/summary">AsiaBarometer</a></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4300/version/2">AsiaBarometer, 2003 (ICPSR 4300)</a>,  
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4300">AsiaBarometer, 2003 (ICPSR 4300)</a>, -->
+<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4300/versions/V2">AsiaBarometer, 2003 (ICPSR 4300)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/20420/version/1">AsiaBarometer, 2004 (ICPSR 20420)</a><!--, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/20420">AsiaBarometer, 2004 (ICPSR 20420)</a>-->
+		</td>
+		<td>survey data</td>
+		<td>culture, social, family, health, quality of life, attitudes</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/series/223">Voice of the People</a></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/33504 ">Voice of the People End of Year Survey, 2011 (ICPSR 33504)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/33504/version/1">Voice of the People End of Year Survey, 2011 (ICPSR 33504)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24681/version/1">Voice of the People, 2004 (ICPSR 24681)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35202">Voice of the People End of Year Survey, 2013 (ICPSR 35202)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35202/version/1">Voice of the People End of Year Survey, 2013 (ICPSR 35202)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4636">Voice of the People, 2005 (ICPSR 4636)</a>, -->
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24681">Voice of the People, 2004 (ICPSR 24681)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/21380/version/1">Voice of the People, 2006 (ICPSR 21380)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4636">Voice of the People, 2005 (ICPSR 4636)</a>,-->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4636/version/1">Voice of the People, 2005 (ICPSR 4636)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24661">Voice of the People Millennium Survey, 2000 (ICPSR 24661)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/21380/version/1">Voice of the People, 2006 (ICPSR 21380)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35201/versions/V2">Voice of the People End of Year Survey, 2012 (ICPSR 35201)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24661/version/1">Voice of the People Millennium Survey, 2000 (ICPSR 24661)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35201/version/2">Voice of the People End of Year Survey, 2012 (ICPSR 35201)</a>, -->
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24482">Voice of the People, 2003 (ICPSR 24482)</a>, -->
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35201">Voice of the People End of Year Survey, 2012 (ICPSR 35201)</a>, -->
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/21441">Voice of the People, 2007 (ICPSR 21441)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/21441/version/1">Voice of the People, 2007 (ICPSR 21441)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24482/version/1">Voice of the People, 2003 (ICPSR 24482)</a> 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/21380">Voice of the People, 2006 (ICPSR 21380)</a>, -->
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/35201">Voice of the People End of Year Survey, 2012 (ICPSR 35201)</a>-->
+		</td>
+		<td>survey data</td>
+		<td>culture, social, public opinion on social and political issues</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/series/232">Correlates of War Project<a/></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24385/version/1">Correlates of War Project: International Trade Data, 1870-2006 (ICPSR 24385)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24385">Correlates of War Project: International Trade Data, 1870-2006 (ICPSR 24385)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5602">Annual Alliance Membership Data, 1815-1965 (ICPSR 5602)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/9905">Correlates of War Project: International and Civil War Data, 1816-1992 (ICPSR 9905)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/24386">Correlates of War Project: Militarized Interstate Dispute (MID) Data, 1816-2001 (ICPSR 24386)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5026">Diplomatic Exchange Data, 1815-1970 (ICPSR 5026)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5025">Diplomatic Missions Received by Each International System Member, 1817-1970 (ICPSR 5025)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5520">Intergovernmental Organization Data, 1816-1964 (ICPSR 5520)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/9903">National Material Capabilities Data, 1816-1985 (ICPSR 9903)</a>
+		</td>
+		<td>statistics</td>
+		<td>war, finances, economy, trade, diplomacy, alliance membership, military</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7624">Cross-National Statistics on the Causes of Death</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7624/version/1">Cross-National Statistics on the Causes of Death, 1966-1974 (ICPSR 7624)</a>
+		</td>
+		<td>statistics</td>
+		<td>population, causes of death</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5402">World Trade Data</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5402/version/1">World Trade Data, 1958-1968 (ICPSR 5402)</a>
+		</td>
+		<td>statistics</td>
+		<td>economy, trade</td>
+    </tr>
+	<tr>
+		<td><a href="https://dbk.gesis.org/dbksearch/GDesc2.asp?list=&search=&search2=&field=&field2=&jahr=&operator=&bool=&bool2=&maxRec=&sort=&DB=e&no=0001">International Social Survey Programme</a></td>
+		<td><a href="https://dbk.gesis.org/dbksearch/sdesc2.asp?no=5800&db=e&doi=10.4232/1.12252">ZA5800: International Social Survey Programme: Health and Health Care - ISSP 2011</a>, (complete list: see project details. Other topics:  Role of Government; Social Networks and Support Systems; Social Inequality; Family and Changing Gender Roles; Work Orientations; Religion; Environment; National Identity; Citizenship; Leisure Time and Sports; Social Networks and Social Resources )</td>
+		<td>survey data</td>
+		<td>culture, social</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/25342">Soft Power in Asia Survey<a/></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/25342/version/1">Soft Power in Asia Survey, 2008 (ICPSR 25342)</a>
+		</td>
+		<td>survey data</td>
+		<td>culture, social, public opinion, soft power, alliances, diplomacy, economy, conflict, trade, human rights, international relations, military, politics, social attitudes</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7493">World Population</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7493/version/1 ">World Population, 1950-1975 (ICPSR 7493)</a></td>
+		<td>statistics</td>
+		<td>population</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4650">Public Opinion and Foreign Policy in the United States, China, India, Australia, and South Korea<a/></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4650/version/1">Public Opinion and Foreign Policy in the United States, China, India, Australia, and South Korea, 2006 (ICPSR 4650)</a></td>
+		<td>survey data</td>
+		<td>culture, social, politics, public opinion</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8624">Government Finance Statistics</a></td>
+		<td>
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8624/version/2">Government Finance Statistics (ICPSR 8624)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8624/versions/V2">Government Finance Statistics (ICPSR 8624)</a>
+		</td>
+		<td>statistics</td>
+		<td>finances, economy</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7628">Direction of Trade</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7628/versions/V2"> Direction of Trade (ICPSR 7628)</a><!--, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7628/version/2">Direction of Trade (ICPSR 7628)</a>-->
+		</td>
+		<td>statistics</td>
+		<td>finances, economy, trade</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.openicpsr.org/openicpsr/project/100005/version/V4/view">China Rice Theory Data</a></td>
+		<td><a href="https://www.openicpsr.org/openicpsr/project/100005/version/V4/view;jsessionid=D3477EACB80623A226555D3061680FEC">China Rice Theory Data</a></td>
+		<td>survey data; statistics</td>
+		<td>psychology, culture, social, cultural pluralism, agriculture, cultural influences</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7950">General Industrial Statistics</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7950/version/1">General Industrial Statistics, 1963-1979 (ICPSR 7950)</a>
+		</td>
+		<td>statistics</td>
+		<td>industry, production</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7623">Cross-National Population by Age and Sex</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7623/versions/V2">Cross-National Population by Age and Sex, 1966-1974 (ICPSR 7623)</a>
+		</td>
+		<td>statistics</td>
+		<td>population</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5302">Political Conflicts</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5302/version/1">Political Conflicts, 1944-1966 (ICPSR 5302)</a>
+		</td>
+		<td>event database</td>
+		<td>conflict, military, politics</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/1256/version/1">Economic Valuations and Interethnic Fears: Perceptions of Chinese Migration in the Russian Far East</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/1256/version/1">Economic Valuations and Interethnic Fears: Perceptions of Chinese Migration in the Russian Far East (ICPSR 1256)</a></td>
+		<td>survey data</td>
+		<td>culture, social, ethnics, migration, economy</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/30541">Country Memberships in Selected Intergovernmental Organizations and Accession to Selected Regional and Global Treaty Regimes</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/30541/version/1">Country Memberships in Selected Intergovernmental Organizations and Accession to Selected Regional and Global Treaty Regimes: Global, Country-Year Format, 1955-2010 (ICPSR 30541)</a>
+		</td>
+		<td>database</td>
+		<td>politics</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5211">World Event/Interaction Survey (WEIS) Project</a></td>
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5211/version/3">World Event/Interaction Survey (WEIS) Project, 1966-1978 (ICPSR 5211)</a>, -->
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5211/versions/V3">World Event/Interaction Survey (WEIS) Project, 1966-1978 (ICPSR 5211)</a>
+		</td>
+		<td>event database</td>
+		<td>international relations, conflict, diplomacy, foreign affairs, world politics, terrorism</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/2761">International Cooperation and Regional Conflicts in the Post-Cold War World</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/2761/version/1">International Cooperation and Regional Conflicts in the Post-Cold War World, 1987-1999 (ICPSR 2761)</a>
+		</td>
+		<td>event database</td>
+		<td>international relations, conflict</td>
+    </tr>
+	<tr>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:37654/tab/1">South China Sea trade</a></td>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:37654">South China Sea trade, 1681-1792</a></td>
+		<td>statistics</td>
+		<td>trade, economy</td>
+    </tr>
+	<!--
+	<tr>
+		<td>Arab West Report</td>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:67412">Arab West Report 2015, Weeks 38-39: Cairo’s China Day and Media Critique</a></td>
+		<td>...</td>
+		<td>...</td>
+    </tr>-->
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/22541">Global Terrorism Database</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/22541/versions/V2">Global Terrorism Database 1.1, 1970-1997 (ICPSR 22541)</a>, 
+		<!--<a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/22600/version/1">Global Terrorism Database II, 1998-2004 (ICPSR 22600)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/22541/version/2">Global Terrorism Database 1.1, 1970-1997 (ICPSR 22541)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/22600">Global Terrorism Database II, 1998-2004 (ICPSR 22600)</a>
+		</td>
+		<td>event database</td>
+		<td>terrorism</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34625">Global Digital Activism Data Set</a></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34625/version/2">Global Digital Activism Data Set, 2013 (ICPSR 34625)</a>, -->
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34625/versions/V2">Global Digital Activism Data Set, 2013 (ICPSR 34625)</a>
+		</td>
+		<td>event database</td>
+		<td>social, politics, activism, digital communication, human rights, civil disobedience, information systems, social media, social networks, technology, computer use</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7892">Demographic Yearbook</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7892/version/1">Historical Supplement to the Demographic Yearbook, 1948-1978 (ICPSR 7892)</a>
+		</td>
+		<td>statistics</td>
+		<td>population</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34721">The Use of Historical Analogies to Make Sense of Novel Events</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/34721/version/1">The Use of Historical Analogies to Make Sense of Novel Events (423BC - 2012) (ICPSR 34721)</a>
+		</td>
+		<td>text corpus</td>
+		<td>politics, history, terrorism, war, language use</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4531">World Values Survey</a></td>
+		<td><!--<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/2790">World Values Surveys and European Values Surveys, 1981-1984, 1990-1993, and 1995-1997 (ICPSR 2790)</a>,--> 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/2790/version/1">World Values Surveys and European Values Surveys, 1981-1984, 1990-1993, and 1995-1997 (ICPSR 2790)</a>, 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/4531">European and World Values Surveys Four-wave Integrated Data File, 1981-2004 (ICPSR 4531)</a>
+		</td>
+		<td>survey data</td>
+		<td>social, culture, attitudes</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7426">Dimensions of Interaction</a></td>
+		<td> 
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7426/version/1">Dimensions of Interaction, 1948-1973 (ICPSR 7426)</a>
+		</td>
+		<td>statistics</td>
+		<td>conflict, diplomacy, war, politics, military, international relations</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7555">Comparative Survey of Freedom</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7555/version/1">Comparative Survey of Freedom, 1972-1976 (ICPSR 7555)</a>
+		</td>
+		<td>survey data</td>
+		<td>social, culture, politics, censorship, civil rights, economics, world politics, freedom of speech, freedom of the press</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5020">Dimensionality of Nations Project</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5020/version/1">Dimensionality of Nations Project: Nation Attribute Data, 1950-1965 (ICPSR 5020)</a>
+		</td>
+		<td>statistics</td>
+		<td>energy, trade, finances, economy, conflict, politics, geography, religion, agriculture, education</td>
+    </tr>
+	<tr>
+		<td><a href="https://sites.google.com/a/thomaserichter.de/gsre/">GSRE 1.0 - Global State Revenues and Expenditures Dataset</a></td>
+		<td><a href="https://data.gesis.org/sharing/#!Detail/10.7802/1290">GSRE 1.0 - Global State Revenues and Expenditures Dataset</a></td>
+		<td>statistics</td>
+		<td>finances, economy</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/NACDA/studies/31381">WHO Study on Global AGEing and Adult Health (SAGE)</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/NACDA/studies/31381/version/1">WHO Study on Global AGEing and Adult Health (SAGE): Wave 1, 2007-2010 (ICPSR 31381)</a>
+		</td>
+		<td>survey data</td>
+		<td>social, health, life satisfaction</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8623">Balance of Payments Statistics</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8623/version/1">Balance of Payments Statistics (ICPSR 8623)</a>
+		</td>
+		<td>statistics</td>
+		<td>finances, trade, economy</td>
+    </tr>
+	<tr>
+		<td><a href="https://histat.gesis.org/histat/de/project/details/E9768AA944AC5D64E980E1D087CD9A20">Homeownership, Renting and Society: Historical and Comparative Perspectives</a></td>
+		<td><a href="https://dbk.gesis.org/dbksearch/sdesc2.asp?no=8673&db=e&doi=10.4232/1.12995">ZA8673: Homeownership, Renting and Society: Historical and Comparative Perspectives, 1920 (1950)-2015</a></td>
+		<td>statistics</td>
+		<td>social, history, construction</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7893">Yearbook of World Energy Statistics</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/7893/version/1">Yearbook of World Energy Statistics, Master File, 1970-1979 (ICPSR 7893)</a>
+		</td>
+		<td>statistics</td>
+		<td>energy, economics, trade, production</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8155">Women in Development</a></td>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/8155/version/1">Women in Development IV, 1983 (ICPSR 8155)</a></td>
+		<td>statistics</td>
+		<td>population, census data, urban vs. rural areas, social roles, discrimination, women, gender, income</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/9471">International Comparative Study on the Management, Productivity, and Effectiveness of Research Teams and Institutions (ICSOPRU)</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/9471/version/1">International Comparative Study on the Management, Productivity, and Effectiveness of Research Teams and Institutions (ICSOPRU), 1971-1989 (ICPSR 9471)</a>
+		</td>
+		<td>survey data</td>
+		<td>social, science, research, productivity, policy-making, administration, management</td>
+    </tr>
+	<tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/22324">Asia Europe Survey (ASES): A Multinational Comparative Study in 18 Countries</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/22324/version/1">Asia Europe Survey (ASES): A Multinational Comparative Study in 18 Countries, 2001 (ICPSR 22324)</a>
+		</td>
+		<td>survey data</td>
+		<td>social, culture, globalization, democracy, life satisfaction, nationalism, political activism, politics, elections</td>
+    </tr>
+    <tr>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:128815/tab/1">The Origins of Agriculture and Sedentary Communities in Northeast China</a></td>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:128815">The Origins of Agriculture and Sedentary Communities in Northeast China</a></td>
+		<td>archaeological surveys and excavations</td>
+		<td>sedentism, agriculture, culture</td>
+    </tr>
+    <tr>
+		<td><a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5908">War-Peace Module</a></td>
+		<td>
+		<a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/5908/version/1 ">War-Peace Module (ICPSR 5908)</a>
+		</td>
+		<td>computer module</td>
+		<td>war, conflict, computer simulation, international relations</td>
+    </tr>
+	<tr>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:73474/tab/1">thakbong</a></td>
+		<td><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:73474">thakbong - the data - June 2017</a>, 
+		<a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:55545">thakbong - the media</a>, 
+		<a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:55544">thakbong - the data - May 2016</a>
+		</td>
+		<td>digital archive (photography)</td>
+		<td>cultural heritage, gravesites, tombs, tombstones</td>
+    </tr>
+	<!--
+	<tr>
+		<td>title</td>
+		<td><a href=""></a></td>
+		<td>...</td>
+		<td>...</td>
+    </tr>
+	-->
+	
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
